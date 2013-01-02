@@ -13,25 +13,25 @@ if (($_GET['page'] > 0)) {
 		GROUP BY rankings.article_id
 		ORDER BY articles.date_updated DESC
 		LIMIT ".(($_GET['page']-1)*20).", 20";
-		$query = mysql_query($q);
-		$arr = array();
-		while ($result = mysql_fetch_object($query)) {
-			$stack = "";
-			if ($result->rank > 0.125) $stack = "right";
-			else if ($result->rank < -0.125) $stack = "left";
-			else $stack = "middle";
-			$html = "
-			<div id='inner'>
-				<b><a href=\"".$result->url."\">".$result->title."</a></b><br>
-				<p>".$result->description."</p>
-			</div>
-			<div id='vote' data-article='".$result->id."'>
-				<div class='vote' data-stack='-1' id='left-vote'>&larr;</div>
-				<div class='vote' data-stack='0' id='middle-vote'>&uarr;</div>
-				<div class='vote' data-stack='1' id='right-vote'>&rarr;</div>
-			</div>
-			";
-			$arr[] = array("id"=>$result->id,"stack"=>$stack,"html"=>$html);
+	$query = mysql_query($q);
+	$arr = array();
+	while ($result = mysql_fetch_object($query)) {
+		$stack = "";
+		if ($result->rank > 0.125) $stack = "right";
+		else if ($result->rank < -0.125) $stack = "left";
+		else $stack = "middle";
+		$html = "
+		<div id='inner'>
+			<b><a href=\"".$result->url."\">".$result->title."</a></b><br>
+			<p>".$result->description."</p>
+		</div>
+		<div id='vote' data-article='".$result->id."'>
+			<div class='vote' data-stack='-1' id='left-vote'>&larr;</div>
+			<div class='vote' data-stack='0' id='middle-vote'>&uarr;</div>
+			<div class='vote' data-stack='1' id='right-vote'>&rarr;</div>
+		</div>
+		";
+		$arr[] = array("id"=>$result->id,"stack"=>$stack,"html"=>$html);
 			
 	}
 	header("Content-Type:text/javascript");

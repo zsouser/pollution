@@ -5,7 +5,7 @@ mysql_connect("localhost","zach","password");
 mysql_select_db("test");
 
 
-if (isset($_GET['page'])) {
+if (($_GET['page'] > 0)) {
 	$q = "
 		SELECT articles.*, avg(rankings.rank) as rank
 		FROM articles
@@ -39,7 +39,7 @@ if (isset($_GET['page'])) {
 	die;
 }
 
-else if ($_GET['do'] == 'vote') {
+else if ($_GET['do'] == 'vote' && $_GET['article'] > 0 && $_GET['stack'] == -1 || $_GET['stack'] == 0 || $_GET['stack'] == 1) {
 	$q = "
 		INSERT INTO rankings
 		(article_id,rank) 
@@ -59,4 +59,3 @@ else if ($_GET['do'] == 'vote') {
 	}
 	
 }
-

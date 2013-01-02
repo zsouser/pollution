@@ -124,9 +124,6 @@ body {
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script>
 
-function more(page) {
-	
-}
 function load(page) {
 	$.ajax({
 		url: "/pollution/story.php?page="+page,
@@ -143,7 +140,7 @@ function load(page) {
 	        $(this).css("color","#000");
         }).click(function() {
         	$.ajax({
-	        	url: "/pollution/vote.php?article="+$(this).parent().data('article')+"&stack="+$(this).data('stack'),
+	        	url: "/pollution/story.php?do=vote&article="+$(this).parent().data('article')+"&stack="+$(this).data('stack'),
 	        	context: this
         	}).complete(function(data) {
         		$("#sky").prepend($(this).parent().parent().parent().attr('class',data.responseText));

@@ -59,3 +59,4 @@ else if ($_GET['do'] == 'vote') {
 	}
 	
 }
+

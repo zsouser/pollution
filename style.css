@@ -1,0 +1,97 @@
+body {
+	font-family:"Courier New", Courier, monospace;
+	font-size:12px;
+	background-color:#c0c0c0;
+}
+#top {
+	height:100%;
+	padding-top:100px;
+}
+#frame {
+	text-align:center;
+}
+
+#row {
+	margin-bottom:30px;
+}
+
+#cloud {
+	vertical-align: middle;
+	text-align:center;
+	padding:25px;
+	border:1px solid black;
+}
+.right {
+	padding-left:550px;
+	width:250px;
+}
+
+.left {
+	padding-right:550px;
+	width:250px;
+}
+
+.middle {
+	width:300px;
+	padding-left:250px;
+}
+
+#sky {
+	position:absolute;
+	left:50%;
+	width:800px;
+	margin-left:-400px;
+}
+
+#more {
+	position:absolute;
+	height:350px;
+	width:300px;
+	left:50%;
+	margin-left:-150px;
+	height:50px;
+	vertical-align: top;
+	text-align: center;
+	padding-bottom:350px;
+}
+#stack {
+	background-image: url(stacks.png);
+	position:fixed;
+	bottom:0px;
+	left:50%;
+	width:800px;
+	height:200px;
+	margin-left:-400px;
+}
+
+#link {
+	margin-top:100px;
+	height:25px;
+	width:400px;
+	font-size: 16px;
+}
+
+#vote {
+	font-size:18px;
+	text-align:center;
+	vertical-align:bottom;
+	height:50px;
+}
+
+#left-vote {
+	text-align:left;
+	display:inline;
+}
+
+#middle-vote {
+	text-align:center;
+	display:inline;
+}
+
+#right-vote {
+	text-align:right;
+	display:inline;
+}
+
+
+
